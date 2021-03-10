@@ -1,0 +1,72 @@
+<section class="details__page">
+  <div class="center">
+    <div class="about__film d-flex align-items-stretch">
+      <div class="left__side d-flex col-6 px-0 py-5">
+        <div class="img__side col-3 px-0">
+          <img class="w-100"
+               [src]="'https://image.tmdb.org/t/p/w500/' + data.poster_path"
+               [alt]="data.title">
+        </div>
+        <div class="about__side px-0  col-10" style="z-index: 10">
+          <div class="pl-3 pt-4">
+            <h1 class="text__color ">{{data.title}}</h1>
+            <div class="details">
+              <div class="up__side d-flex">
+                <span class="genre text__color ">
+                  <span *ngFor="let ganre of data?.genres">{{ganre.name}} | </span>
+                  <span>{{data.release_date}}</span>
+                </span>
+                <span class="about__box ml-2">PG-13</span>
+                <span class="about__box ml-2">125 min</span>
+                <span class="about__box ml-2">CC</span>
+              </div>
+              <div class="down__side d-flex mt-2">
+                <div class="stars text__color ">
+                  (498, w4222)
+                </div>
+                <div class="ml-3 text__color ">
+                  img 61%
+                </div>
+                <div class="age ml-3 text__color ">
+                  img
+                  12+
+                </div>
+              </div>
+            </div>
+            <div class="d-flex mt-3">
+              <button class="button w-100">Trailer</button>
+              <button class="button w-100 mx-3">+ List</button>
+              <button class="button w-100">Redeem icon</button>
+            </div>
+            <span class="about__text pt-3 d-flex text__color ">
+              {{data.overview}}
+            </span>
+            <div class="pt-5 d-flex">
+              <button class="rent_buy px-5 py-2">Rent $4554</button>
+              <button class="rent_buy px-5 py-2 ml-3">Buy $4554</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="right__side col-6 px-0 background"
+           [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w500'+ data.backdrop_path +')'">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="actors__section py-5">
+  <div class="center">
+
+    <h2 class="text__color">Cast & Crew</h2>
+    <div class="actors__blocks d-flex align-items-center pt-4">
+      <div class="actor__block d-flex flex-column col-2 px-0">
+        <img class="img"
+             src="https://1847884116.rsc.cdn77.org/hindi/gallery/actor/sushantsinghrajput/sushante_poster.jpg" alt="">
+        <span class="name d-flex mt-2 text__color">indian sexy</span>
+        <span class="position text__color">80 dolars ixdi .........</span>
+      </div>
+    </div>
+  </div>
+
+</section>

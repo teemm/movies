@@ -1,0 +1,38 @@
+<header class="header d-flex align-items-center">
+  <nav class="nav d-flex align-items-center justify-content-between w-100 px-3">
+    <div class="left__side d-flex">
+      <a [routerLink]="['/']" class="main__logo">
+        <!--        <img class="logo__img" src="" alt="">-->
+        logo
+      </a>
+      <ul class="header__list d-flex">
+        <li class="header__lists ml-3">
+          <a href="javascript:void(0)" class="header__a">movies</a>
+        </li>
+        <li class="header__lists ml-3">
+          <a href="javascript:void(0)" class="header__a">my videos</a>
+        </li>
+        <li class="header__lists ml-3">
+          <a href="javascript:void(0)" class="header__a">free</a>
+        </li>
+      </ul>
+    </div>
+    <div class="right__side">
+      <ul class="header__list d-flex">
+        <li class="header__lists mr-3">
+          <a href="javascript:void(0)" class="header__a">movies</a>
+        </li>
+        <li class="header__lists mr-3">
+          <a href="javascript:void(0)" class="header__a">my videos</a>
+        </li>
+        <li class="header__lists" (click)="toggleSearch()">
+          <!--          <img class="search__img" src="" alt="">-->
+          search
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="search-wrapper" *ngIf="searchIsActive">
+  <app-search></app-search>
+</div>

@@ -1,0 +1,32 @@
+<section class="filter__section">
+  <div class="center py-4">
+    <!--    <button>filter</button>-->
+    <!--    <div class="d-flex align-items-center ml-3">-->
+    <!--      <input type="checkbox">-->
+    <!--      <span class="d-flex pl-1">free films</span>-->
+    <!--    </div>-->
+    <div class="filter__bar col-10 d-flex mx-auto">
+      <button (click)="filter('popular')"
+              [class.active]="activeFilter === 'popular'"
+              class="w-100 filter__buttons">Popular
+      </button>
+      <button (click)="filter('top_rated')"
+              [class.active]="activeFilter === 'top_rated'"
+              class="w-100 filter__buttons">Top rated
+      </button>
+      <button (click)="filter('upcoming')"
+              [class.active]="activeFilter === 'upcoming'"
+              class="w-100 filter__buttons">Upcoming
+      </button>
+    </div>
+  </div>
+</section>
+<section class="films__section py-5">
+  <div class="center">
+    <div class="films__list">
+      <app-movie-card
+        *ngFor="let item of data;trackBy: trackByFn"
+        [itemData]="item"></app-movie-card>
+    </div>
+  </div>
+</section>
