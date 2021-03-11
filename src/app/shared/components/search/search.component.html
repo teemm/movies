@@ -1,1 +1,23 @@
-<p>search works!</p>
+<div class="search__block center py-5">
+  <form class="search__from" [formGroup]="searchForm">
+    <div class="form-group">
+      <input class="form-control"
+             aria-describedby="emailHelp"
+             type="search"
+             appFocus
+             formControlName="search"
+             placeholder="typing">
+    </div>
+  </form>
+  <div class="list-group searched__items pt-3" *ngIf="searchData">
+    <a *ngFor="let data of searchData"
+       (click)="resultClick()"
+       [routerLink]="['/details/', data.id]"
+       class="list-group-item list-group-item-action">
+      <i class="fas fa-search mr-1"></i>
+      {{data.title}}</a>
+  </div>
+  <div class="list-group searched__items pt-5" *ngIf="!searchData && isTyped">
+    <span class="list-group-item  text-danger"><i class="fas fa-grimace mr-1"></i> no Films </span>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<ng-container *ngIf="data">
+  <div class="actor__block d-flex flex-column px-0 justify-content-between">
+    <img class="img h-100"
+         #img
+         [src]="'https://image.tmdb.org/t/p/w500/' + data.profile_path"
+         [alt]="data.name"
+         (error)="setDefaultPic()">
+    <div class="px-2">
+    <span class="name d-flex mt-2 text__color">{{data.name}}</span>
+    <span class="position text__color w-100">{{data.character}}</span>
+    </div>
+  </div>
+</ng-container>

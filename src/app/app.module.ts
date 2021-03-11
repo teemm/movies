@@ -9,7 +9,7 @@ import {UrlInterceptor} from "./core/interceptors/url/url.interceptor";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,36 +3,19 @@
     <div class="left__side d-flex">
       <a [routerLink]="['/']" class="main__logo">
         <!--        <img class="logo__img" src="" alt="">-->
-        logo
+        <i class="fas fa-home c-white"></i>
       </a>
-      <ul class="header__list d-flex">
-        <li class="header__lists ml-3">
-          <a href="javascript:void(0)" class="header__a">movies</a>
-        </li>
-        <li class="header__lists ml-3">
-          <a href="javascript:void(0)" class="header__a">my videos</a>
-        </li>
-        <li class="header__lists ml-3">
-          <a href="javascript:void(0)" class="header__a">free</a>
-        </li>
-      </ul>
     </div>
     <div class="right__side">
       <ul class="header__list d-flex">
-        <li class="header__lists mr-3">
-          <a href="javascript:void(0)" class="header__a">movies</a>
-        </li>
-        <li class="header__lists mr-3">
-          <a href="javascript:void(0)" class="header__a">my videos</a>
-        </li>
-        <li class="header__lists" (click)="toggleSearch()">
+        <li class="header__lists pointer" (click)="toggleSearch()">
           <!--          <img class="search__img" src="" alt="">-->
-          search
+          <i class="fas fa-search c-white"></i>
         </li>
       </ul>
     </div>
   </nav>
 </header>
-<div class="search-wrapper" *ngIf="searchIsActive">
-  <app-search></app-search>
+<div class="search__wrapper" *ngIf="searchIsActive" [class.active]="searchIsActive">
+  <app-search (closeSearch)="closeSearch($event)"></app-search>
 </div>

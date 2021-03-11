@@ -19,14 +19,12 @@ export class UrlInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    // console.log(request);
     const req = request.clone({
       url: `${this.baseUrl}${request.url}`,
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       })
     })
-    // console.log(req);
     return next.handle(req);
   }
 }

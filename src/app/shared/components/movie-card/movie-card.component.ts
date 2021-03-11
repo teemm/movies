@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {movies} from "../../../core/interfaces/movie.interface";
 
 @Component({
   selector: 'app-movie-card',
@@ -6,5 +7,5 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent {
-  @Input() itemData: any;
+  @Input() itemData: movies;
 }

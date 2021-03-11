@@ -6,6 +6,8 @@ $black: #000000;
 $gray: #b2beb8;
 $dark_blue: #001a2b;
 $text__color: #9cb2c0;
+$dark_gray: #1d1d1d;
+$yelow: #fdc116;
 body {
   padding-top: 60px;
 }
@@ -25,6 +27,22 @@ body {
 
   .header__a {
     color: $white;
+  }
+}
+
+.search__wrapper {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+  pointer-events: none;
+  transition: 0.2s;
+
+  &.active {
+    opacity: 1;
+    max-height: 2000px;
+    pointer-events: initial;
+    overflow: visible;
+    transition: 0.4s;
   }
 }
 
@@ -66,17 +84,30 @@ body {
   grid-row-gap: 20px;
 
   .film__block {
-    background-image: url("https://image.tmdb.org/t/p/w500/pci1ArYW7oJ2eyTo2NMYEKHHiCP.jpg");
     height: 300px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     align-content: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+    background-color: $dark_gray;
+
+    .film__block__child {
+      border: 4px solid $white;
+      transition: 0.2s;
+      border-radius: 2px;
+    }
+
+    .film__name {
+      color: $white;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .film__age {
+      font-size: 12px;
+    }
 
     .overlay__block {
       opacity: 0;
@@ -98,7 +129,7 @@ body {
 
       .text {
         color: $white;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 600;
         position: relative;
         z-index: 40;
@@ -116,6 +147,11 @@ body {
     }
 
     &:hover {
+      .film__block__child {
+        border-color: $green;
+        transition: 0.2s;
+      }
+
       .overlay__block {
         opacity: 1;
         transition: 0.2s;
@@ -125,12 +161,35 @@ body {
   }
 }
 
+@media only screen and (max-width: 1720px) {
+
+  .center {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .films__list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1520px) {
+  .films__list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media only screen and (max-width: 1220px) {
+  .films__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .about__box {
   background-color: $gray;
   color: $black;
   padding: 2px 12px 4px 12px;
   border-radius: 20px;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 .about__film {
@@ -157,6 +216,24 @@ body {
   background-color: $dark_blue;
 }
 
+.actor__block {
+  .name {
+    color: $white;
+    font-size: 14px;
+  }
+
+  .position {
+    font-size: 12px;
+    white-space: initial;
+  }
+}
+
+.actors__blocks {
+  .drag-scroll-content {
+    overflow: hidden !important;
+  }
+}
+
 .details__page {
 
   background-color: $dark_blue;
@@ -169,7 +246,9 @@ body {
   border-radius: 4px;
   color: $white;
 }
-
+body {
+  background-color: $dark_blue;
+}
 ul {
   margin-bottom: 0;
   padding-left: 0;
@@ -186,8 +265,24 @@ ul {
   border-radius: 4px;
 }
 
+.main__logo {
+  font-size: 25px;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.c-white {
+  color: $white;
+}
+
+.c-green {
+  color: $green;
+}
+
+.c-yelow {
+  color: $yelow;
 }
 
 .background {
