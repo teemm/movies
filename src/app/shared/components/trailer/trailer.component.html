@@ -2,7 +2,7 @@
      class="modal show fade d-flex"
      style="background-color: rgba(0,0,0, .9)" id="exampleModalCenter" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog-centered mx-auto" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalCenterTitle">{{title}}</h5>
@@ -11,9 +11,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <iframe class="w-100"
-                allowfullscreen
-                height="315"
+        <iframe allowfullscreen
+                height="400"
+                width="800"
                 [src]="'https://www.youtube.com/embed/' + key | safe:'resourceUrl'"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>

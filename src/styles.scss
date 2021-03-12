@@ -7,6 +7,7 @@ $gray: #b2beb8;
 $dark_blue: #001a2b;
 $text__color: #9cb2c0;
 $dark_gray: #1d1d1d;
+$dark_gray_film: #0b4163;
 $yelow: #fdc116;
 body {
   padding-top: 60px;
@@ -91,7 +92,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 4px;
-    background-color: $dark_gray;
+    background-color: $dark_gray_film;
 
     .film__block__child {
       border: 4px solid $white;

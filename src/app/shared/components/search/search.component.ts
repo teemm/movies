@@ -27,9 +27,8 @@ export class SearchComponent implements OnInit, OnDestroy {
     });
     this.subscription.add(
       this.searchForm.get('search').valueChanges.pipe(
-        debounceTime(200),
+        debounceTime(150),
         distinctUntilChanged(),
-        filter((res: string) => res && res.length >= 3),
         switchMap((res: string) => this.searchService.get(res))
       ).subscribe((res: moviesResponse) => {
           if (res.results.length > 0) {

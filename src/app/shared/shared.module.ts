@@ -9,6 +9,7 @@ import {FocusDirective} from "./directives/focus/focus.directive";
 import {ActorCardComponent} from './components/actor-card/actor-card.component';
 import {TrailerComponent} from './components/trailer/trailer.component';
 import {SafePipe} from './pipes/safe/safe.pipe';
+import {NotFoundComponent} from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {SafePipe} from './pipes/safe/safe.pipe';
     FocusDirective,
     ActorCardComponent,
     TrailerComponent,
-    SafePipe
+    SafePipe,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import {SafePipe} from './pipes/safe/safe.pipe';
     FocusDirective,
     ActorCardComponent,
     TrailerComponent,
-    SafePipe
+    SafePipe,
+    NotFoundComponent
   ]
 })
 export class SharedModule {

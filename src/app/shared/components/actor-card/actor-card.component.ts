@@ -10,7 +10,7 @@ import {MovieDetails} from "../../../core/interfaces/movie.interface";
 export class ActorCardComponent {
   @Input('data') public data: ActorCast | ActorCrew
   @ViewChild('img', {static: false}) private imgElement: ElementRef;
-  private readonly imgNotFound: string = 'https://www.pngrepo.com/download/238977/404-error.png';
+  private readonly imgNotFound: string = './assets/images/no-photo.png';
 
   constructor(private renderer: Renderer2) {
   }

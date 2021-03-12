@@ -1,14 +1,14 @@
 <section class="filter__section">
-  <div class="center py-4">
-    <div class="filter__bar col-10 d-flex mx-auto">
-      <button class="w-100 filter__buttons"
+  <div class="center py-4" *ngIf="filterData else loading">
+    <div class="filter__bar col-12 d-flex mx-auto px-0">
+      <button class="w-100 filter__buttons py-2"
               *ngFor="let filter of filterData"
               [class.active]="filter.isActive"
               (click)="itemsFilter(filter)">{{filter.name}}</button>
     </div>
   </div>
 </section>
-<section class="films__section py-5">
+<section class="films__section py-5" *ngIf="data else loading">
   <div class="center">
     <div class="films__list">
       <app-movie-card
@@ -17,3 +17,5 @@
     </div>
   </div>
 </section>
+
+<ng-template #loading>loading</ng-template>

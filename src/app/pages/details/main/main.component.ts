@@ -8,7 +8,6 @@ import {MovieDetails} from "../../../core/interfaces/movie.interface";
 import {Trailer, TrailerResponse} from "../../../core/interfaces/trailer.interface";
 import {Subscription} from "rxjs";
 
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',

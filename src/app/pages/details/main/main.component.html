@@ -1,4 +1,4 @@
-<section class="details__page" *ngIf="data">
+<section class="details__page" *ngIf="data else Loading">
   <div class="center">
     <div class="about__film d-flex align-items-stretch">
       <div class="left__side d-flex col-6 px-0 py-5">
@@ -17,7 +17,7 @@
                   <span>{{data.release_date}}</span>
                 </span>
                 <div>
-                <span class="about__box ml-2">{{data.runtime}} min</span>
+                  <span class="about__box ml-2">{{data.runtime}} min</span>
                 </div>
 
               </div>
@@ -30,9 +30,9 @@
             <div class="d-flex mt-3 flex-wrap" *ngIf="trailerData">
               <div *ngFor="let trailer of trailerData let i = index" class="col-5 pl-0 mb-2">
 
-              <button class="button w-100"
-                      (click)="openTrailer(trailer)">Trailer {{i + 1}}
-              </button>
+                <button class="button w-100"
+                        (click)="openTrailer(trailer)">Trailer {{i + 1}}
+                </button>
               </div>
             </div>
             <span class="about__text pt-3 d-flex text__color ">
@@ -53,21 +53,27 @@
   </div>
 </section>
 
-<app-trailer *ngIf="openTrailerModal && trailerData"
+<app-trailer *ngIf="openTrailerModal && trailerData "
              (closeModal)="closeModal($event)"
              [title]="data.title"
              [key]="ActiveTrailer.key"></app-trailer>
 
-<section class="actors__section py-5">
+<section class="actors__section py-5" *ngIf="(actorCast || actorCrew) else Loading">
   <div class="center">
     <h2 class="text__color">Cast & Crew</h2>
     <drag-scroll class="actors__blocks d-flex pt-4 overflow-auto">
-      <app-actor-card class="col-2 col-xl-1" drag-scroll-item
-                      *ngFor="let actor of actorCast"
-                      [data]="actor"></app-actor-card>
-      <app-actor-card class="col-2 col-xl-1" drag-scroll-item
-                      *ngFor="let actor of actorCrew"
-                      [data]="actor"></app-actor-card>
+      <ng-container *ngIf="actorCast">
+        <app-actor-card class="col-2 col-xl-1" drag-scroll-item
+                        *ngFor="let actor of actorCast"
+                        [data]="actor"></app-actor-card>
+      </ng-container>
+      <ng-container *ngIf="actorCrew">
+        <app-actor-card class="col-2 col-xl-1" drag-scroll-item
+                        *ngFor="let actor of actorCrew"
+                        [data]="actor"></app-actor-card>
+      </ng-container>
     </drag-scroll>
   </div>
 </section>
+
+<ng-template #Loading>Loading</ng-template>
